@@ -34,7 +34,7 @@ function App() {
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
       if (task.id === taskId) {
-        return { ...task, isCompleted: !isCompleted };
+        return { ...task, isCompleted: !task.isCompleted };
       }
 
       return task;
