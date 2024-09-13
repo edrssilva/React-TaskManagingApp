@@ -1,9 +1,28 @@
-function Tasks(){
-    return(
-        <div>
-            
-        </div>
-    );
+import { ChevronRightIcon } from "lucide-react";
+
+function Tasks(props) {
+  return (
+    <ul className="w-full space-y-4 p-4 bg-gray-50 rounded-md shadow-lg">
+      {props.tasks.map((task) => (
+        <li
+          key={task.id}
+          className="w-full flex justify-between gap-4 text-nowrap"
+        >
+          <button
+            onClick={() => props.onTaskClick(task.id)}
+            className={`w-full bg-white rounded-sm shadow-md text-left text-slate-500 font-semibold p-2 pl-4' ${
+              task.isCompleted && "line-through"
+            }`}
+          >
+            {task.title}
+          </button>
+          <button className="w-16 bg-white rounded-sm shadow-md flex justify-center items-center">
+            <ChevronRightIcon color="#64748b" />
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default Tasks;
