@@ -1,8 +1,10 @@
-# React + Vite
+# Task Managing App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I developed this task managing app to begin my studies on React using Vite, this app contains the following functions:
+  - Adding tasks with title and description
+  - Listing all added tasks
+  - Chaging the completed attribute of each task on click
+  - Showing task details(descrition) on another page
+  - Deleting tasks
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+With this app I also began to use TailwindCSS which proves yourself to be a really powerfull, easy to use and fast CSS Framework.
