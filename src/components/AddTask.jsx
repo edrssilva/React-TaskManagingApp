@@ -12,13 +12,14 @@ function AddTask({ onAddTaskSubmit }) {
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       ></input>
-      <input
+      <textarea
         type="text"
+        rows="4"
         placeholder="Digite a descrição da tarefa"
         className="bg-slate-200 px-4 py-2 rounded-md text-slate-500 font-medium placeholder:text-slate-500 placeholder:font-medium focus:outline-slate-500"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
-      ></input>
+      ></textarea>
       <button
         className="bg-slate-500 text-white rounded-md font-medium p-2"
         onClick={() => {

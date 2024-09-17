@@ -1,36 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar programação",
-      description:
-        "Estudar programação para se tornar um desenvolvedor full-stack",
-      isCompleted: true,
-    },
-    {
-      id: 2,
-      title: "Fazer exercícios físicos",
-      description: "Praticar exercícios físicos para manter a saúde em dia",
-      isCompleted: false,
-    },
-    {
-      id: 3,
-      title: "Ler um livro",
-      description: "Ler um livro para adquirir novos conhecimentos e relaxar",
-      isCompleted: true,
-    },
-    {
-      id: 4,
-      title: "Organizar a casa",
-      description: "Fazer uma limpeza geral e organizar os itens da casa",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+
+  useEffect(() => {
+    async function fetchTasks() {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos?_limit=10/",
+        { method: "GET" }
+      );
+      const data = await response.json();
+      setTasks(data);
+    }
+
+    fetchTasks();
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
@@ -61,7 +54,7 @@ function App() {
 
   return (
     <div className=" w-screen h-screen bg-slate-200 flex justify-center">
-      <main className="w-1/3 min-w-96 flex flex-col items-center p-8 space-y-4">
+      <main className="w-3/3 min-w-96 flex flex-col items-center p-8 space-y-4">
         <h1 className="text-slate-600 font-semibold text-4xl py-3 pb-2 w-full text-center bg-gray-50 rounded-lg shadow-lg">
           Gerenciador de Tarefas
         </h1>

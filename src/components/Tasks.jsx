@@ -16,7 +16,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
       {tasks.map((task) => (
         <li
           key={task.id}
-          className="w-full flex justify-between gap-4 text-nowrap"
+          className="w-full flex justify-between gap-4 text-clip"
         >
           <button
             onClick={() => onTaskClick(task.id)}
