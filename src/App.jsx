@@ -56,7 +56,7 @@ function App() {
   return (
     <div className=" w-screen h-screen bg-slate-200 flex justify-center">
       <main className="w-3/3 min-w-96 flex flex-col items-center p-8 space-y-4">
-        <h1 className="text-slate-600 font-semibold text-4xl py-3 pb-2 w-full text-center bg-gray-50 rounded-lg shadow-lg">
+        <h1 className="text-slate-600 font-semibold text-4xl py-3 px-4 pb-2 w-full text-center bg-gray-50 rounded-lg shadow-lg">
           Gerenciador de Tarefas
         </h1>
         <AddTask onAddTaskSubmit={onAddTaskSubmit} />
