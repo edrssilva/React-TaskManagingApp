@@ -18,7 +18,8 @@ function App() {
       setTasks(data);
     }
 
-    fetchTasks();
+    //If wanted, you can use an API to GET the tasks
+    //fetchTasks();
   }, []);
 
   useEffect(() => {
