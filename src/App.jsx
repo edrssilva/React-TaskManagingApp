@@ -8,7 +8,7 @@ function App() {
     JSON.parse(localStorage.getItem("tasks")) || []
   );
 
-  useEffect(() => {
+  /* useEffect(() => {
     async function fetchTasks() {
       const response = await fetch(
         "https://jsonplaceholder.typicode.com/todos?_limit=10/",
@@ -18,9 +18,9 @@ function App() {
       setTasks(data);
     }
 
-    //If wanted, you can use an API to GET the tasks
-    //fetchTasks();
-  }, []);
+    If wanted, you can use an API to GET the tasks
+    fetchTasks();
+  }, []); */
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
